@@ -4,92 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aamir Sohail | Portfolio</title>
-      <!-- Favicon -->
-    <link rel="icon" href="images/favicon2.png" type="image/webp">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon2.png" type="image/webp">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-900 text-white h-screen fixed top-0 left-0 p-5">
+      <h2 class="text-center text-xl mb-5 font-bold">My Portfolio</h2>
+      <ul class="space-y-2">
+        <li><a href="#about" class="block p-2 hover:bg-gray-700 rounded transition">About Me</a></li>
+        <li><a href="#projects" class="block p-2 hover:bg-gray-700 rounded transition">Projects</a></li>
+        <li><a href="#skills" class="block p-2 hover:bg-gray-700 rounded transition">Skills</a></li>
+        <li><a href="#contact" class="block p-2 hover:bg-gray-700 rounded transition">Contact</a></li>
+      </ul>
+    </div>
 
-<header>
-  <h1>Aamir Sohail</h1>
-  <p>Backend Developer | Python & Django | Cloud Enthusiast</p>
-</header>
+    <!-- Main Content -->
+    <div class="ml-64 p-5 w-full">
+      <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-blue-600 mb-2">Aamir Sohail</h1>
+        <p class="text-lg text-gray-600">Backend Developer | Python & Django | Cloud Enthusiast</p>
+      </header>
 
-<!-- Sidebar -->
-  <div class="sidebar">
-    <h2>My Portfolio</h2>
-    <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- Main Content -->
-  <div class="main-content">
-      <section id="about">
-          <h1>About Me</h1>
-          <p>Backend developer passionate about building scalable web apps.</p>
-      </section>
-      <section id="projects">
-        <h1>Projects</h1>
-        <p>I am currently working on following projects</p>
-      </section>
-  
-  
-      <section class="projects">
-        <article class="project-card">
-          <img src="images/InventoryApp.png" alt="Hardware Shop Project Screenshot" class="project-image" />
-          <h3 class="project-title">Hardware Shop Inventory & Billing System</h3>
-          <p class="project-description">
-            Web app to manage inventory, billing, and stock for a hardware store. Includes OTP login, billing with GST, and deployed on Railways.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/AamirSohail07000/Inventory_Management" target="_blank">GitHub</a>
-            <a href="https://hardware-shop.example.com" target="_blank">Live Demo</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="images/scoringapp.png" alt="SportsBuzz Project Screenshot" class="project-image" />
-          <h3 class="project-title">SportsBuzz - Local Cricket Hub</h3>
-          <p class="project-description">
-            Live cricket score and news portal with match outcome prediction and cloud deployment on Railway.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/AamirSohail07000/sports_score" target="_blank">GitHub</a>
-            <a href="https://sportsbuzz.example.com" target="_blank">Live Demo</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="images/Resume_Analyzer.png" alt="Resume Analyzer Project Screenshot" class="project-image" />
-          <h3 class="project-title">AI-Powered Resume Analyzer</h3>
-          <p class="project-description">
-            A simple web tool that extracts skills from resumes and compares with job descriptions using NLP.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/resume-analyzer" target="_blank">GitHub</a>
-            <a href="https://resume-analyzer.example.com" target="_blank">Live Demo</a>
-          </div>
-        </article>
+      <section id="about" class="mb-12">
+        <h1 class="text-3xl font-bold mb-4">About Me</h1>
+        <p>Backend developer passionate about building scalable web apps.</p>
       </section>
 
-      <section id="skills">
-        <h1>Skills</h1>
+      <section id="projects" class="mb-12">
+        <h1 class="text-3xl font-bold mb-4">Projects</h1>
+        <p class="mb-6">I am currently working on following projects</p>
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mb-16">
+          <article class="bg-white rounded-lg shadow-md p-5 hover:-translate-y-1 hover:shadow-lg transition duration-200 flex flex-col">
+            <img src="images/InventoryApp.png" alt="Hardware Shop Project Screenshot" class="w-full h-48 object-cover rounded mb-4 bg-gray-200" />
+            <h3 class="text-xl font-bold text-blue-600 mb-2">Hardware Shop Inventory & Billing System</h3>
+            <p class="text-gray-700 mb-4 flex-grow">
+              Web app to manage inventory, billing, and stock for a hardware store. Includes OTP login, billing with GST, and deployed on Railways.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/AamirSohail07000/Inventory_Management" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition mr-4">GitHub</a>
+              <a href="https://hardware-shop.example.com" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition">Live Demo</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-md p-5 hover:-translate-y-1 hover:shadow-lg transition duration-200 flex flex-col">
+            <img src="images/scoringapp.png" alt="SportsBuzz Project Screenshot" class="w-full h-48 object-cover rounded mb-4 bg-gray-200" />
+            <h3 class="text-xl font-bold text-blue-600 mb-2">SportsBuzz - Local Cricket Hub</h3>
+            <p class="text-gray-700 mb-4 flex-grow">
+              Live cricket score and news portal with match outcome prediction and cloud deployment on Railway.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/AamirSohail07000/sports_score" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition mr-4">GitHub</a>
+              <a href="https://sportsbuzz.example.com" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition">Live Demo</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-lg shadow-md p-5 hover:-translate-y-1 hover:shadow-lg transition duration-200 flex flex-col">
+            <img src="images/Resume_Analyzer.png" alt="Resume Analyzer Project Screenshot" class="w-full h-48 object-cover rounded mb-4 bg-gray-200" />
+            <h3 class="text-xl font-bold text-blue-600 mb-2">AI-Powered Resume Analyzer</h3>
+            <p class="text-gray-700 mb-4 flex-grow">
+              A simple web tool that extracts skills from resumes and compares with job descriptions using NLP.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/yourusername/resume-analyzer" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition mr-4">GitHub</a>
+              <a href="https://resume-analyzer.example.com" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition">Live Demo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="mb-12">
+        <h1 class="text-3xl font-bold mb-4">Skills</h1>
         <p>Python, Flask, Django, MySQL, Git, API Development</p>
       </section>
-
+    </div>
   </div>
 
-
-<footer>
-  <section id="contact">
-    <h1>Contact</h1>
-  </section>
-  <p>Connect with me: <a href="mailto:sohail.aamir07000@gmail.com">sohail.aamir07000@gmail.com</a> | <a href="https://linkedin.com/in/aamir-sohail-2b9aa2153/" target="_blank">LinkedIn</a> | <a href="https://github.com/AamirSohail07000" target="_blank">GitHub</a></p>
-</footer>
-
+  <footer class="text-center text-sm text-gray-600 mt-10 py-5">
+    <section id="contact">
+      <h1 class="text-3xl font-bold mb-4">Contact</h1>
+    </section>
+    <p>Connect with me: <a href="mailto:sohail.aamir07000@gmail.com" class="text-blue-600 hover:underline">sohail.aamir07000@gmail.com</a> | <a href="https://linkedin.com/in/aamir-sohail-2b9aa2153/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a> | <a href="https://github.com/AamirSohail07000" target="_blank" class="text-blue-600 hover:underline">GitHub</a></p>
+  </footer>
 </body>
 </html>
