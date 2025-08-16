@@ -10,35 +10,12 @@
   <link href="/css/main.css" rel="stylesheet">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    document.querySelector('.md\\:hidden').addEventListener('click', function() {
-      const menu = document.querySelector('.hidden.md\\:flex');
-      menu.classList.toggle('hidden');
-      menu.classList.toggle('flex');
-      menu.classList.toggle('flex-col');
-      menu.classList.toggle('absolute');
-      menu.classList.toggle('top-16');
-      menu.classList.toggle('right-4');
-      menu.classList.toggle('bg-gray-900');
-      menu.classList.toggle('p-4');
-      menu.classList.toggle('rounded');
-    });
-  </script>
-  <script>
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
   <!-- Navigation Bar -->
   <nav class="bg-gray-900 text-white sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <span class="text-xl font-bold">Aamir Sohail</span>
       <div class="hidden md:flex space-x-6">
         <a href="#about" class="hover:text-blue-400 transition">About</a>
         <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
@@ -46,11 +23,18 @@
         <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
       </div>
       <!-- Mobile menu button -->
-      <button class="md:hidden">☰</button>
+      <button class="md:hidden mobile-menu-btn">☰</button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 bg-gray-900 p-4">
+      <a href="#about" class="block py-2 hover:text-blue-400">About</a>
+      <a href="#projects" class="block py-2 hover:text-blue-400">Projects</a>
+      <a href="#skills" class="block py-2 hover:text-blue-400">Skills</a>
+      <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
     </div>
   </nav>
 
-  <!-- Main Content - Removed ml-64 and flex container -->
+  <!-- Main Content -->
   <div class="p-5 container mx-auto">
     <header class="text-center mb-10">
       <h1 class="text-4xl font-bold text-blue-600 mb-2">Aamir Sohail</h1>
@@ -82,62 +66,284 @@
       </div>           
     </section>
 
-    <section id="projects" class="mb-12">
-      <h1 class="text-3xl font-bold mb-4">Projects</h1>
-      <p class="mb-6">I am currently working on following projects</p>
-    
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mb-16">
-        <article class="bg-white rounded-lg shadow-md p-5 hover:-translate-y-1 hover:shadow-lg transition duration-200 flex flex-col">
-          <img src="images/InventoryApp.png" alt="Hardware Shop Project Screenshot" class="w-full h-48 object-cover rounded mb-4 bg-gray-200" />
-          <h3 class="text-xl font-bold text-blue-600 mb-2">Hardware Shop Inventory & Billing System</h3>
-          <p class="text-gray-700 mb-4 flex-grow">
-            Web app to manage inventory, billing, and stock for a hardware store. Includes OTP login, billing with GST, and deployed on Railways.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/AamirSohail07000/Inventory_Management" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition mr-4">GitHub</a>
-            <a href="https://hardware-shop.example.com" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition">Live Demo</a>
-          </div>
-        </article>
+    <section id="projects" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">My Projects</h2>
+        <p class="text-center text-gray-600 mb-16">I am currently working on following projects</p>
 
-        <article class="bg-white rounded-lg shadow-md p-5 hover:-translate-y-1 hover:shadow-lg transition duration-200 flex flex-col">
-          <img src="images/scoringapp.png" alt="SportsBuzz Project Screenshot" class="w-full h-48 object-cover rounded mb-4 bg-gray-200" />
-          <h3 class="text-xl font-bold text-blue-600 mb-2">SportsBuzz - Local Cricket Hub</h3>
-          <p class="text-gray-700 mb-4 flex-grow">
-            Live cricket score and news portal with match outcome prediction and cloud deployment on Railway.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/AamirSohail07000/sports_score" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition mr-4">GitHub</a>
-            <a href="https://sportsbuzz.example.com" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition">Live Demo</a>
-          </div>
-        </article>
+        <!-- Project 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-16">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Image Carousel -->
+            <div class="w-full lg:w-1/2">
+              <div class="carousel h-80 relative">
+                <div class="carousel-inner">
+                  <div class="carousel-item">
+                    <img src="images/hardware1.png" alt="Hardware Shop Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/hardware2.png" alt="Hardware Shop Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/hardware3.png" alt="Hardware Shop Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition z-10">
+                  &larr;
+                </button>
+                <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition z-10">
+                  &rarr;
+                </button>
+                <div class="carousel-nav">
+                  <button class="carousel-dot active" data-index="0"></button>
+                  <button class="carousel-dot" data-index="1"></button>
+                  <button class="carousel-dot" data-index="2"></button>
+                </div>
+              </div>
+            </div>
 
-        <article class="bg-white rounded-lg shadow-md p-5 hover:-translate-y-1 hover:shadow-lg transition duration-200 flex flex-col">
-          <img src="images/Resume_Analyzer.png" alt="Resume Analyzer Project Screenshot" class="w-full h-48 object-cover rounded mb-4 bg-gray-200" />
-          <h3 class="text-xl font-bold text-blue-600 mb-2">AI-Powered Resume Analyzer</h3>
-          <p class="text-gray-700 mb-4 flex-grow">
-            A simple web tool that extracts skills from resumes and compares with job descriptions using NLP.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/resume-analyzer" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition mr-4">GitHub</a>
-            <a href="https://resume-analyzer.example.com" target="_blank" class="text-blue-600 font-semibold hover:text-blue-800 transition">Live Demo</a>
+            <!-- Project Details -->
+            <div class="w-full lg:w-1/2 p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">Hardware Shop Inventory & Billing System</h3>
+              <p class="text-gray-600 mb-6">Web app to manage inventory, billing, and stock for a hardware store.</p>
+              
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                  <li>OTP-based authentication</li>
+                  <li>GST-compliant billing system</li>
+                  <li>Real-time inventory tracking</li>
+                  <li>Sales analytics dashboard</li>
+                  <li>Deployed on Railway</li>
+                </ul>
+              </div>
+
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-2">Technologies Used:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Flask</span>
+                  <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                  <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                  <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+                </div>
+              </div>
+
+              <div class="flex space-x-4">
+                <a href="https://github.com/AamirSohail07000/Inventory_Management" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://hardware-shop.example.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
           </div>
-        </article>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-16">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Image Carousel -->
+            <div class="w-full lg:w-1/2">
+              <div class="carousel h-80 relative">
+                <div class="carousel-inner">
+                  <div class="carousel-item">
+                    <img src="images/scoringapp.png" alt="SportsBuzz Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/scoringapp2.png" alt="SportsBuzz Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/scoringapp3.png" alt="SportsBuzz Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition z-10">
+                  &larr;
+                </button>
+                <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition z-10">
+                  &rarr;
+                </button>
+                <div class="carousel-nav">
+                  <button class="carousel-dot active" data-index="0"></button>
+                  <button class="carousel-dot" data-index="1"></button>
+                  <button class="carousel-dot" data-index="2"></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="w-full lg:w-1/2 p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">SportsBuzz - Local Cricket Hub</h3>
+              <p class="text-gray-600 mb-6">Live cricket score and news portal with match outcome prediction and cloud deployment on Railway.</p>
+              
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                  <li>Live score updates</li>
+                  <li>Match prediction algorithm</li>
+                  <li>News aggregation</li>
+                  <li>User comments system</li>
+                  <li>Cloud deployment</li>
+                </ul>
+              </div>
+
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-2">Technologies Used:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Django</span>
+                  <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                  <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                  <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                </div>
+              </div>
+
+              <div class="flex space-x-4">
+                <a href="https://github.com/AamirSohail07000/sports_score" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://sportsbuzz.example.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Image Carousel -->
+            <div class="w-full lg:w-1/2">
+              <div class="carousel h-80 relative">
+                <div class="carousel-inner">
+                  <div class="carousel-item">
+                    <img src="images/resume-analyzer1.png" alt="Resume Analyzer Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/resume-analyzer2.png" alt="Resume Analyzer Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/resume-analyzer3.png" alt="Resume Analyzer Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition z-10">
+                  &larr;
+                </button>
+                <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition z-10">
+                  &rarr;
+                </button>
+                <div class="carousel-nav">
+                  <button class="carousel-dot active" data-index="0"></button>
+                  <button class="carousel-dot" data-index="1"></button>
+                  <button class="carousel-dot" data-index="2"></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="w-full lg:w-1/2 p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">AI-Powered Resume Analyzer</h3>
+              <p class="text-gray-600 mb-6">A simple web tool that extracts skills from resumes and compares with job descriptions using NLP.</p>
+              
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                  <li>PDF/Word resume parsing</li>
+                  <li>Skill extraction using NLP</li>
+                  <li>Job description analysis</li>
+                  <li>Match scoring system</li>
+                  <li>Visual comparison dashboard</li>
+                </ul>
+              </div>
+
+              <div class="mb-6">
+                <h4 class="font-semibold text-gray-700 mb-2">Technologies Used:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                  <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">NLTK</span>
+                  <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Flask</span>
+                  <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Spacy</span>
+                </div>
+              </div>
+
+              <div class="flex space-x-4">
+                <a href="https://github.com/yourusername/resume-analyzer" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://resume-analyzer.example.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="mb-12">
-      <h1 class="text-3xl font-bold mb-4">Skills</h1>
-      <p>Python, Flask, Django, MySQL, Git, API Development</p>
+    <section id="skills" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Skills & Technologies</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <img src="images/python-logo.png" alt="Python" class="h-12 mx-auto mb-2">
+            <span class="font-medium">Python</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <img src="images/django-logo.png" alt="Django" class="h-12 mx-auto mb-2">
+            <span class="font-medium">Django</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <img src="images/flask-logo.png" alt="Flask" class="h-12 mx-auto mb-2">
+            <span class="font-medium">Flask</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <img src="images/mysql-logo.png" alt="MySQL" class="h-12 mx-auto mb-2">
+            <span class="font-medium">MySQL</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <img src="images/docker-logo.png" alt="Docker" class="h-12 mx-auto mb-2">
+            <span class="font-medium">Docker</span>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <img src="images/aws-logo.webp" alt="AWS" class="h-12 mx-auto mb-2">
+            <span class="font-medium">AWS</span>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 
-  <footer class="text-center text-sm text-gray-600 mt-10 py-5">
-    <section id="contact">
-      <h1 class="text-3xl font-bold mb-4">Contact</h1>
+  <footer class="text-center text-sm text-gray-600 mt-10 py-5 bg-gray-50">
+    <section id="contact" class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Contact</h2>
+      <p class="mb-6 max-w-2xl mx-auto">Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="mailto:sohail.aamir07000@gmail.com" class="text-blue-600 hover:text-blue-800 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/aamir-sohail-2b9aa2153/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+        <a href="https://github.com/AamirSohail07000" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+      </div>
+      <p>&copy; 2023 Aamir Sohail. All rights reserved.</p>
     </section>
-    <p>Connect with me: <a href="mailto:sohail.aamir07000@gmail.com" class="text-blue-600 hover:underline">sohail.aamir07000@gmail.com</a> | <a href="https://linkedin.com/in/aamir-sohail-2b9aa2153/" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a> | <a href="https://github.com/AamirSohail07000" target="_blank" class="text-blue-600 hover:underline">GitHub</a></p>
   </footer>
   <!-- Load JS -->
-  <script src="/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
